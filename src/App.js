@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Main from "./Movie/Main";
+import "./App.css";
+import HollyWooodMovies from "./Movie/HollyWoodMovies";
+import { Route, Routes } from "react-router-dom";
+import PunjabiMovies from "./Movie/PunjabiMovies";
+import Genre from "./Movie/Genre";
+import IndianMovies from "./Movie/IndianMovies";
+import SouthIndian from "./Movie/SouthIndianMovies";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Main />} />
+
+        <Route path="/hollywood" element={<HollyWooodMovies />} />
+        <Route path="/punjabi" element={<PunjabiMovies />} />
+        <Route path="/genre" element={<Genre />} />
+        <Route path="/indian" element={<IndianMovies />} />
+        <Route path="/south" element={<SouthIndian />} />
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;
